@@ -14,7 +14,7 @@ class GroupNorm(nn.Module):
         N,C,H,W = x.size()
         G = self.num_groups
         
-        if C % G == 0
+        if C % G == 0:
             x = x.view(N,G,-1)
             mean = x.mean(-1, keepdim=True)
             var = x.var(-1, keepdim=True)
